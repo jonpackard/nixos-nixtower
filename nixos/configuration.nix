@@ -8,6 +8,11 @@
   pkgs,
   ...
 }: {
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -19,6 +24,10 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    ./tailscale.nix
+    ./jovianos.nix
+    ./packages.nix
+    ./firewall.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -71,12 +80,12 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "your-hostname";
+  networking.hostName = "nixdeck";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
-    your-username = {
+    jonathan = {
       # TODO: You can set an initial password for your user.
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
@@ -84,6 +93,8 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDmyVo39UKS1lCS96iEeave2KhmcfyOAvnds70T4/S9uAtO0KBlLBnbZZdsEs7JVTekRt552sippBv/lVT9DH5F7sN34ERtRG21Pyv6WLlpL0hmMdW0oCMm5P7BG35x0CcbNWIqZSOlV1heociteFmiFcypETwTYaoq7LaLeaeI1vaHxkv+7OTh75CeNRFazSpm61NNv6OrW0TuclGKvbdU+94o2fVWSxIb2unt1s8nAhUvqPE0y7IXzc2PU3E5ls5Nt6/PfhmlA3VdCoXWOnlpxkaeYw/0fTE7fMfWtZhRs0MwziL64ptvz7Pm/FLuro3dwQdssbRe1/05Vu1fOp+V6S5RyPH/bIu3B1IYHyzLBeoAr5RHFkns8jecIAOPAnw9BYyvEgbKKGZRjQQ3FmAa3Id2YEQMiwv5zaRg6RD9pTJ/E499jNdlbKTY/rDfvDIya11lZw4QpTk59eZ6fzkSC5EVINedfLttszjcD76X4/Z1uxtOFY85KCm6LBM85wM= jonathan@Jonathans-MacBook-Pro.local"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsmLTZDewhDkk4gKR1CmAlLXAZK/M79y1voyJJhcv2B jonathan@jwp-nixos-wsl"
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel"];
@@ -104,5 +115,5 @@
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.11";
 }
