@@ -97,7 +97,7 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsmLTZDewhDkk4gKR1CmAlLXAZK/M79y1voyJJhcv2B jonathan@jwp-nixos-wsl"
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "networkmanager"];
     };
   };
 

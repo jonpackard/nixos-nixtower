@@ -24,4 +24,8 @@
 
   # Enable Decky Loader
   jovian.decky-loader.enable = true;
+
+  # Required for first-time setup
+  networking.networkmanager.enable = true;
+
 }
