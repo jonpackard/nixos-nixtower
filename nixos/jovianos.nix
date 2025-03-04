@@ -1,7 +1,5 @@
 { inputs, config, lib, pkgs, ... }:
 
-#with inputs.jovian-nixos;
-
 {
   # JovianOS
   # Enable Steam Deck specific configurations.
@@ -27,5 +25,12 @@
 
   # Required for first-time setup
   networking.networkmanager.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    maliit-keyboard # Needed for desktop mode lock screen
+    kdePackages.discover # KDE Plasma app management
+  ];
+
+  services.flatpak.enable = true; # Needed for KDE Plasma app management
 
 }
