@@ -55,6 +55,7 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     fortune
+    tmux
   ];
 
   # Enable home-manager and git
