@@ -25,7 +25,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     ./tailscale.nix
-    ./jovianos.nix
     ./packages.nix
     ./firewall.nix
 

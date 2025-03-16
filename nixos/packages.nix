@@ -4,5 +4,6 @@
     vim
     wget
     git
+    tmux
   ];
 }
