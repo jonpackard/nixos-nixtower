@@ -56,6 +56,7 @@
   home.packages = with pkgs; [
     fortune
     tmux
+    firefox
   ];
 
   # Enable home-manager and git

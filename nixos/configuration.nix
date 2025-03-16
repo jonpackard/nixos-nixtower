@@ -28,6 +28,7 @@
     ./packages.nix
     ./firewall.nix
     ./kde-plasma.nix
+    ./nvidia.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
