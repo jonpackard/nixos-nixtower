@@ -27,6 +27,7 @@
     ./tailscale.nix
     ./packages.nix
     ./firewall.nix
+    ./kde-plasma.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -79,7 +80,7 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "nixdeck";
+  networking.hostName = "nixtower";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
