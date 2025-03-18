@@ -27,8 +27,12 @@
     ./tailscale.nix
     ./packages.nix
     ./firewall.nix
-    ./kde-plasma.nix
+     ./kde-plasma.nix
+    #./gnome-x11.nix
     ./nvidia.nix
+    ./powersaving.nix
+    ./steam.nix
+    #./monado.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -98,7 +102,7 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsmLTZDewhDkk4gKR1CmAlLXAZK/M79y1voyJJhcv2B jonathan@jwp-nixos-wsl"
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = ["wheel" "networkmanager" "gamemode" ];
     };
   };
 

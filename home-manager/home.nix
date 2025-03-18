@@ -57,6 +57,7 @@
     fortune
     tmux
     firefox
+    unstable.pcloud
   ];
 
   # Enable home-manager and git
